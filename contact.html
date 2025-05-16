@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | LearnHub</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+     <div class="logo">LearnHub</div>
+<div class="auth-links">
+  <a href="#" id="login-btn">Login</a> |
+  <a href="#" id="signup-btn">Sign Up</a>
+</div>
+
+
+       <button id="theme-toggle">🌙</button>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero animate-fade">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you!</p>
+  </section>
+
+  <section class="contact-section" tabindex="0">
+    <form class="contact-form" onsubmit="handleSubmit(event)" novalidate>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LearnHub. All rights reserved.</p>
+  </footer>
+
+  <button id="back-to-top" title="Back to Top" aria-label="Back to top">↑</button>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Thank you! Your message has been sent.");
+      event.target.reset();
+    }
+
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
